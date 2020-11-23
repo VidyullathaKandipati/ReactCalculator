@@ -3,7 +3,6 @@
 This is a calculator app that supports basic functions: Key points to note: 
 1.  This is rendered as scientific calculator when the screen size is 1800px or more. But the sceientific operations are not supported. So nothing will happen when you click on them. Basic functions should still work.
 2.  You can see the notes section to see the chain operations
-3.  Notes and memory when user presses any number after '='
 
 ## Available Scripts
 
