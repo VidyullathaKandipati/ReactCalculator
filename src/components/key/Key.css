@@ -1,0 +1,52 @@
+.key {
+  align-items: center;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 25px;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+  transition: filter 0.3s ease-in;
+}
+
+.key:active,
+.key:focus {
+  filter: brightness(120%);
+}
+
+.key.zero {
+  width: 9rem;
+  grid-column: span 2;
+  border-radius: 57.5px;
+  position: relative;
+  justify-content: flex-start;
+  padding-left: 43px;
+}
+
+.key.function {
+  color: white;
+  background: #333333;
+}
+
+.key.not-supported {
+  color: white;
+  background: #212121;
+}
+
+
+.key.operator {
+  background: #fb9106;
+}
+
+.key.operator:focus {
+  background-color: #a5a5a5;
+  color: #fb9106;
+}
+
+@media screen and (min-width: 1800px) {
+  .key.zero {
+    width: 8.5rem;
+  }
+}

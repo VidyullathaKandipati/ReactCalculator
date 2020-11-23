@@ -1,0 +1,56 @@
+.app {
+  background: black;
+  border-radius: 50px;
+  color: white;
+  height: 46rem;
+  padding: 2rem;
+  padding-top: 0px;
+  position: relative;
+  width: 24rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.display-notes {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  font-weight: 300;
+  text-align: right;
+  min-height: 45px;
+}
+
+.display {
+  font-size: 5rem;
+  padding-bottom: 2rem;
+  font-weight: 300;
+  text-align: right;
+}
+
+.keys {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.keys-bigger-screen {
+  display: none;
+}
+
+@media screen and (min-width: 1800px) {
+  .keys {
+    display: none;
+  }
+
+  .keys-bigger-screen {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .app {
+    width: 60rem;
+  }
+}
