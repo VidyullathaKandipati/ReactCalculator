@@ -75,18 +75,24 @@ const App = () => {
       return;
     }
 
-    // Do the necessary operation when the operators are pressed. When '+', '-', '/', 'x', '=' are pressed
+    // do nothing when repeatedly pressing '='
+    if (value === operatorMap.equal && operator === operatorMap.equal) return;
+
     if (value === operatorMap.add || value === operatorMap.subtract || value === operatorMap.multiply || value === operatorMap.divide || value === operatorMap.equal) {
-      const operation = value === operatorMap.equal || operator ? operator : value;
-      console.log(`value: ${value}, operator: ${operator}, operation: ${operation}`);
+      const operation = value === operatorMap.equal ? operator : value;
       let result = num;
-      // To avoid subtrating from 0
-      if (+memory !== 0) {
+
+      // do not multiply or divide by 0
+      if (num === 0 && (value === operatorMap.multiply || value === operatorMap.divide)) {
+        result = memory;
+      } else if (+memory !== 0) { // To avoid subtrating from 0
         result = operate(operation, memory, number);
       }
-      setStates({ number: 0, memory: result, operator: value, notes: notes + value });
+
+      const newNotes = value === operatorMap.equal ? notes + value + result : notes + value;
+      setStates({ number: 0, memory: result, operator: operation, notes: newNotes });
       return;
-    } 
+    }
 
     // concatenate the new numbers to the old
     let newNumber = +(num + value).toString();
